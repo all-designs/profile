@@ -1,0 +1,856 @@
+/*+-----------------------------------------------------------+
+  |                                                           |
+  |    Project Name: Profile                                  |
+  |    Author:  melon mia                                     |
+  |    Author Email: amdadulhaquemelon15442@gmail.com         |
+  |    Version: 1.00                                          |
+  |                                                           |
+  +-----------------------------------------------------------+*/
+
+
+/*===========================
+    1. Theme default css 
+===========================*/
+
+
+/* Google Fonts Css */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');
+
+/* Local Fonts Css */
+
+@font-face {
+    font-family: "adinekirnberg";
+    src: url("../fonts/adinekirnberg-script.regular.eot");
+    src: url("../fonts/adinekirnberg-script.regular.eot")format("embedded-opentype"), url("../fonts/adinekirnberg-script.regular.woff2")format("woff2"), url("../fonts/AdineKirnberg-Script.woff")format("woff"), url("../fonts/adinekirnberg-script.regular.ttf") format("truetype"), url("../fonts/AdineKirnberg-Script.svg")format("svg");
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+
+.img {
+    max-width: 100%;
+    -webkit-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+    vertical-align: middle;
+}
+
+a:focus,
+input:focus,
+textarea:focus,
+button:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+a:focus,
+a:hover {
+    text-decoration: none;
+}
+
+span,
+a {
+    display: inline-block;
+}
+
+a,
+button {
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    color: #003059;
+    font-weight: 500;
+}
+
+h1 {
+    font-weight: 500;
+}
+
+h2 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 28px;
+}
+
+h4 {
+    font-size: 22px;
+}
+
+h5 {
+    font-size: 18px;
+}
+
+h6 {
+    font-size: 16px;
+}
+
+ul,
+ol {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+
+p {
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: #999999;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.bg_cover {
+    background-position: center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*== All Button Style ==*/
+
+
+/*== All section title here ==*/
+
+.section_title {
+    text-align: center;
+}
+
+
+/* PRELOADER
+================================================== */
+
+.page {
+    position: relative;
+    height: 100%;
+}
+
+.preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 111111111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: .3s all ease;
+    pointer-events: none;
+    backface-visibility: hidden;
+    -webkit-transition: .3s all ease;
+    -moz-transition: .3s all ease;
+    -ms-transition: .3s all ease;
+    -o-transition: .3s all ease;
+}
+
+.preloader::before,
+.preloader::after {
+    background: #111;
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    transition: .2s linear;
+    pointer-events: none;
+    -webkit-transition: .2s linear;
+    -moz-transition: .2s linear;
+    -ms-transition: .2s linear;
+    -o-transition: .2s linear;
+}
+
+.preloader::before {
+    top: 0;
+    left: 50%;
+    height: 100%;
+    bottom: 0;
+}
+
+.preloader::after {
+    top: 0;
+    bottom: 0;
+    right: 50%;
+    height: 100%;
+}
+
+.preloader.loaded::before,
+.preloader.loaded::after {
+    transition: all 1s linear;
+    -webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -ms-transition: all 1s linear;
+    -o-transition: all 1s linear;
+}
+
+.preloader.loaded::before {
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+}
+
+.preloader.loaded::after {
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+}
+
+.preloader .preloder_text {
+    opacity: 1;
+    position: relative;
+    z-index: 1111111111;
+    transition: all .5s linear;
+    -webkit-transition: all .5s linear;
+    -moz-transition: all .5s linear;
+    -ms-transition: all .5s linear;
+    -o-transition: all .5s linear;
+}
+
+.preloader .preloder_text h1 {
+    color: #fff;
+}
+
+.preloader .preloder_text h1 img {
+    margin: 0 8px;
+}
+
+.preloader.loaded .preloder_text {
+    opacity: 0;
+}
+
+
+/*===========================
+    HEADER CSS 
+===========================*/
+
+.profile .profile_left {
+    background: #111111;
+    position: fixed;
+    width: 325px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.profile_left .profile_left_inner {
+    padding: 40px 15px;
+}
+
+.profile_left .profile_left_inner .profile_image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.profile_left .profile_left_inner .profile_image a {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.profile_left .profile_left_inner .profile_menu {
+    margin-top: 35px;
+}
+
+.profile_left .profile_left_inner .profile_menu ul li {
+    position: relative;
+}
+
+.profile_left .profile_left_inner .profile_menu ul li:before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 1px;
+    background: #ddd;
+    bottom: 0;
+    left: 0;
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+}
+
+.profile_left .profile_left_inner .profile_menu ul li:hover:before {
+    width: 100%;
+}
+
+.profile_left .profile_left_inner .profile_menu ul li a {
+    font-size: 16px;
+    height: 50px;
+    padding-left: 15px;
+    width: 100%;
+    line-height: 53px;
+    position: relative;
+    color: #4cc9f0;
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+}
+
+.profile_left .profile_left_inner .profile_menu ul li a.active {
+    color: #fff;
+}
+
+.profile_left .profile_left_inner .profile_menu ul li a i {
+    margin-right: 10px;
+    color: #4cc9f0;
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+}
+
+.profile_left .profile_left_inner .profile_menu ul li a.active i {
+    color: #fff;
+}
+
+.social_link ul {
+    text-align: center;
+    margin-top: 30px;
+    background: #4CC9F0;
+    padding: 10px 10px;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    width: 100%;
+}
+
+.social_link ul li {
+    display: inline-block;
+}
+
+.social_link ul li a {
+    width: 30px;
+    height: 30px;
+    background: #111;
+    line-height: 30px;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 50%;
+    color: #fff;
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+}
+
+.social_link ul li a:hover {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+    background: #fff;
+    color: rgb(7, 6, 6);
+}
+
+
+/* PROFILE RIGHT */
+
+.profile .profile_right {
+    padding-left: 360px;
+}
+
+.profile .profile_right section {
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+    transition: all .5s linear;
+    -webkit-transition: all .5s linear;
+    -moz-transition: all .5s linear;
+    -ms-transition: all .5s linear;
+    -o-transition: all .5s linear;
+}
+
+.profile_right section.active {
+    opacity: 1;
+    visibility: visible;
+    display: block;
+    z-index: 9999;
+    transition: all .5s linear;
+    -webkit-transition: all .5s linear;
+    -moz-transition: all .5s linear;
+    -ms-transition: all .5s linear;
+    -o-transition: all .5s linear;
+}
+
+.profile_right .home_page {
+    padding-top: 155px;
+    padding-left: 115px;
+}
+
+.profile_right .home_page .text h4 {
+    color: #424242;
+    margin-bottom: 40px;
+}
+
+.profile_right .home_page .text h1 {
+    color: #3a3434;
+    font-weight: 900;
+    font-size: 45px;
+    margin-bottom: 50px;
+}
+
+.profile_right .home_page .text h1 span {
+    margin-left: 15px;
+    color: #4cc9f0;
+}
+
+.profile_right .home_page .text a {
+    margin-top: 25px;
+    padding: 15px 25px;
+    background: #4cc9f0;
+    font-weight: 600;
+    color: #424242;
+    border-radius: 50px;
+    position: relative;
+    transition: all .3s linear;
+    -webkit-transition: all .3s linear;
+    -moz-transition: all .3s linear;
+    -ms-transition: all .3s linear;
+    -o-transition: all .3s linear;
+}
+
+.profile_right .home_page .text a .text {
+    position: relative;
+    z-index: 9999;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.profile_right .home_page .text a .sheap1,
+.profile_right .home_page .text a .sheap2,
+.profile_right .home_page .text a .sheap3,
+.profile_right .home_page .text a .sheap4 {
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background: #ddd;
+    top: 0;
+    display: none;
+}
+
+.profile_right .home_page .text a .sheap1::before,
+.profile_right .home_page .text a .sheap2::before,
+.profile_right .home_page .text a .sheap3::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 1px;
+    background: #ddd;
+}
+
+.profile_right .home_page .text a .sheap1::after,
+.profile_right .home_page .text a .sheap2::after,
+.profile_right .home_page .text a .sheap3::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 1px;
+    background: #ddd;
+}
+
+.profile_right .home_page .text a .sheap1 {
+    left: 22px;
+}
+
+.profile_right .home_page .text a .sheap1::before {
+    left: 21px;
+}
+
+.profile_right .home_page .text a .sheap1::after {
+    left: 40px;
+}
+
+.profile_right .home_page .text a .sheap2 {
+    left: 84px;
+}
+
+.profile_right .home_page .text a .sheap2::before {
+    left: 20px;
+}
+
+.profile_right .home_page .text a .sheap2::after {
+    left: 40px;
+}
+
+.profile_right .home_page .text a .sheap3 {
+    right: 28px;
+}
+
+.profile_right .home_page .text a .sheap3::before {
+    left: -22px;
+}
+
+.profile_right .home_page .text a .sheap3::after {
+    left: -43px;
+}
+
+.profile_right .home_page .text a .sheap4 {
+    right: 90px;
+}
+
+.profile_right .home_page .text a:hover .sheap1,
+.profile_right .home_page .text a:hover .sheap2,
+.profile_right .home_page .text a:hover .sheap3,
+.profile_right .home_page .text a:hover .sheap4 {
+    display: block;
+}
+
+
+/*===========================
+	ABOUT PART CSS 
+===========================*/
+
+.about_me {
+    position: relative;
+}
+
+.about_me h2 {
+    text-shadow: 3px 3px 20px #fbbedd59, -7px 0px 78px #ff90c77a;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 86px;
+    font-size: 91px;
+    color: #fff;
+}
+
+.about_me h4 {
+    position: absolute;
+    top: 9%;
+    font-size: 55px;
+    font-weight: 900;
+    color: #4cc9f0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about_me .personal_info {
+    margin-left: 35px;
+    padding-top: 60px;
+}
+
+.about_me .personal_info h3 {
+    font-size: 22px;
+    margin-bottom: 35px;
+    font-weight: 600;
+}
+
+.about_me .personal_info .details ul li {
+    margin-bottom: 20px;
+}
+
+.about_me .personal_info .details ul li .left {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.about_me .personal_info .details ul li .right {
+    margin-left: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+/*===========================
+    EVENT CSS 
+===========================*/
+
+.my_skills h4 {
+    text-align: center;
+    font-size: 35px;
+    font-weight: 900;
+    color: #4cc9f0;
+}
+
+.my_skills .skill_box {
+    position: relative;
+    font-size: 120px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #cccccc;
+    margin: 0 auto;
+}
+
+.my_skills .skill_box .bar1,
+.my_skills .skill_box .bar2,
+.my_skills .skill_box .bar3,
+.my_skills .skill_box .bar {
+    position: absolute;
+    border: 0.08em solid #4cc9f0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    box-sizing: content-box;
+    clip: rect(60px, 60px, 120px, 0px);
+    background: #4cc9f0;
+}
+
+.my_skills .skill_box .bar1 {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+}
+
+.my_skills .skill_box .bar2 {
+    transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+}
+
+.my_skills .skill_box .bar3 {
+    transform: rotate(405deg);
+    -webkit-transform: rotate(405deg);
+    -moz-transform: rotate(405deg);
+    -ms-transform: rotate(405deg);
+    -o-transform: rotate(405deg);
+}
+
+.my_skills .skill_box.css .bar3 {
+    transform: rotate(400deg);
+    -webkit-transform: rotate(400deg);
+    -moz-transform: rotate(400deg);
+    -ms-transform: rotate(400deg);
+    -o-transform: rotate(400deg);
+}
+
+.my_skills .skill_box.jquery .bar1,
+.my_skills .skill_box.jquery .bar3 {
+    display: none;
+}
+
+.my_skills .skill_box.jquery .bar2 {
+    transform: rotate(265deg);
+    -webkit-transform: rotate(265deg);
+    -moz-transform: rotate(265deg);
+    -ms-transform: rotate(265deg);
+    -o-transform: rotate(265deg);
+}
+
+.my_skills .skill_box span {
+    position: absolute;
+    font-size: 29px;
+    z-index: 9;
+    top: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-weight: 900;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+.my_skills .name {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 22px;
+    color: #222;
+    font-weight: 600;
+}
+
+
+/*===========================
+    OFFER CSS 
+===========================*/
+
+.my_portfolio {
+    position: relative;
+}
+
+.my_portfolio h2 {
+    text-shadow: 3px 3px 20px #fbbedd59, -7px 0px 78px #ff90c77a;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 86px;
+    font-size: 91px;
+    color: #fff;
+}
+
+.my_portfolio h4 {
+    position: absolute;
+    top: 60%;
+    font-size: 55px;
+    font-weight: 900;
+    color: #4cc9f0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.my_portfolio .single_portfolio {
+    position: relative;
+    margin-bottom: 60px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.my_portfolio .single_portfolio h5 {
+    position: absolute;
+    color: #fff;
+    z-index: 999;
+    bottom: 0;
+    text-align: center;
+    display: block;
+    background: #000;
+    width: 100%;
+    margin: 0;
+    padding: 17px 0px;
+    font-size: 23px;
+}
+
+.my_portfolio .single_portfolio .por_image {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.my_portfolio .single_portfolio .por_image .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(76, 202, 240, 0.589);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.my_portfolio .single_portfolio .por_image .overlay i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    color: #fff;
+}
+
+.my_portfolio .single_portfolio:hover .por_image .overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.my_portfolio .sub_title {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.my_portfolio .sub_title h2 {
+    font-size: 22px;
+    color: #000;
+}
+
+
+/*===========================
+    OFFER CSS 
+===========================*/
+
+.Contact_me {
+    position: relative;
+}
+
+.Contact_me h2 {
+    text-shadow: 3px 3px 20px #fbbedd59, -7px 0px 78px #ff90c77a;
+    font-weight: 900;
+    text-align: center;
+    margin-top: 86px;
+    font-size: 91px;
+    color: #fff;
+}
+
+.Contact_me h4 {
+    position: absolute;
+    top: 60%;
+    font-size: 55px;
+    font-weight: 900;
+    color: #4cc9f0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.Contact_me .contuct_from form {
+    padding: 10px 60px;
+    margin-top: 35px;
+}
+
+.Contact_me .contuct_from form input {
+    width: 45%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.Contact_me .contuct_from form .name {
+    margin-bottom: 25px;
+}
+
+.Contact_me .contuct_from form textarea {
+    width: 93%;
+    margin-top: 40px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px;
+    height: 99px;
+    display: block;
+}
+
+.Contact_me .contuct_from form button {
+    width: 108px;
+    height: 44px;
+    margin-top: 20px;
+    text-align: center;
+    margin-left: 40%;
+    background: #4CC9F0;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 3px;
+    border: 0;
+}
